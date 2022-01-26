@@ -11,17 +11,9 @@ spec:
     metadata:
       labels:
         app: backend
-        env: development
     spec:
       containers:
       - name: backend
         image: {{$.Values.image}}
         ports:
         - containerPort: 4000
-        env:
-        - name: PORT
-          value: "4000"
-        - name: LOG_LEVEL
-          value: "info"
-        - name: NODE_ENV
-          value: "development"

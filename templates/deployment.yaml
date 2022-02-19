@@ -13,7 +13,7 @@ spec:
         app: backend
     spec:
       imagePullSecrets:
-      - name: backend-secret
+      - name: regcred
       containers:
       - name: backend
         image: {{$.Values.image}}

@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deployment
+  name: {{$.Values.name}}-deployment
 spec:
   selector:
     matchLabels:
-      app: backend
+      app: {{$.Values.name}}
   replicas: 2
   template:
     metadata:
       labels:
-        app: backend
+        app: {{$.Values.name}}
     spec:
       imagePullSecrets:
       - name: regcred
       containers:
-      - name: backend
+      - name: {{$.Values.name}}
         image: {{$.Values.image}}
         imagePullPolicy: Always
         ports:
-        - containerPort: 8089
+        - containerPort: {{ default "8000" $.Values.port}}

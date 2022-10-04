@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{$.Values.name}}-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: {{default "8000" $.Values.port}}
     targetPort: {{default "8000" $.Values.port}}

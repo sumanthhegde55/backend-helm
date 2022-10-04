@@ -12,6 +12,8 @@ spec:
       labels:
         app: {{$.Values.name}}
     spec:
+      imagePullSecrets:
+      - name: regcred
       containers:
       - name: {{$.Values.name}}
         image: {{$.Values.image}}

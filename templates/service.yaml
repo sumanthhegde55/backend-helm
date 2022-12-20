@@ -7,6 +7,7 @@ spec:
   ports:
   - port: {{default "8000" $.Values.port}}
     targetPort: {{default "8000" $.Values.port}}
+    nodePort: {{default "8000" $.Values.port}}
     protocol: TCP
   selector:
     app: {{$.Values.name}}
